@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        style="
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          margin-bottom: 18px;
+          position: absolute;
+          top: 20px;
+        "
+      >
+        <input
+          type="file"
+          id="videoInput"
+          accept=".mp4,.avi,.mov,.mkv"
+          style="display: none"
+        />
+        <button id="videoSelectBtn">Video tanlash</button>
+        <span id="videoFileName" style="color: #555; font-size: 0.95rem"></span>
+      </div>
+      <div class="video__wrapper">
+        <button class="video__shift-left"></button>
+        <button class="video__shift-right"></button>
+        <button class="video__shift-play"></button>
+        <video id="video" src=""></video>
+        <div class="player__wrapper">
+          <div class="progress__wrapper">
+            <div class="progress__container">
+              <div class="progress"></div>
+            </div>
+          </div>
+          <div class="btn-wrapper">
+            <div class="controls-btn-wrapper">
+              <button id="backward" class="controls-btn">
+                <i class="fa-solid fa-backward"></i>
+              </button>
+              <button id="play" class="controls-btn">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button id="forward" class="controls-btn">
+                <i class="fa-solid fa-forward"></i>
+              </button>
+              <div class="progress__time-wrapper">
+                <p class="progress__present_time">00:00</p>
+                <span>/</span>
+                <p class="progress__music_time">00:00</p>
+              </div>
+            </div>
+            <div class="voice-wrapper">
+              <input type="range" id="voice" min="0" max="100" value="50" />
+              <p id="voice-value">50</p>
+              <button id="mute">
+                <i class="fa-solid fa-volume-up"></i>
+              </button>
+              <button id="fullscreen">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="playlist__wrapper">
+        <ul class="playlist__list">
+          <!-- Shu yerga playlist keladi -->
+        </ul>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
