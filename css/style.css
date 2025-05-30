@@ -19,11 +19,10 @@ body {
     padding: 0;
     font-family: 'Karla', sans-serif;
     font-size: 20px;
-    background-color: antiquewhite;
+    background-color: #0F0F0F;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .container {
@@ -273,9 +272,14 @@ p {
 }
 
 .playlist__wrapper {
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 10px;
     width: 28%;
+}
+
+.playlist__name {
+    color: #fff;
+    margin-left: 20px;
 }
 
 .playlist__list {
@@ -287,14 +291,16 @@ p {
 
 .playlist__item {
     display: flex;
-    background-color: #ececec;
+    background-color: transparent;
     border-radius: 10px;
     position: relative;
     padding: 5px;
     cursor: pointer;
+    color: #fff;
+    border: 1px solid #949494;
 
     &:hover {
-        background-color: #ccc;
+        background-color: #949494;
     }
 }
 
@@ -310,6 +316,7 @@ p {
 }
 
 .playlist__title {
+    width: 100%;
     font-size: 1rem;
     text-align: center;
 }
@@ -326,7 +333,45 @@ p {
 .playlist__music_time {}
 
 
-@media (max-width: 500px) {
+@media screen and (max-width: 1300px) {
+    .video__wrapper {
+        width: 65%;
+    }
+
+    .playlist__wrapper {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .video__wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 300px;
+    }
+
+    .playlist__wrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .playlist__name {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .playlist__list {
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
     .player__wrapper {
         width: 98vw;
         padding: 1.2rem 0.5rem 1.5rem 0.5rem;

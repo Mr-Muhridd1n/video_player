@@ -32,8 +32,6 @@ let isDragging = false;
 function changeMusic(videosCounter) {
   video.src = videos[videosCounter].video_link;
   videoFileName.textContent = videos[videosCounter].video_title;
-  playlist_add();
-  // video.load();
   if (container.classList.contains("play")) {
     video.play();
   }
@@ -58,6 +56,7 @@ function playlist_add() {
     });
   });
 }
+playlist_add();
 
 changeMusic(videosCounter);
 
@@ -224,6 +223,7 @@ videoInput.addEventListener("change", (e) => {
     video.src = url;
     videoFileName.textContent = file.name;
     videos.push({ video_link: url, video_title: file.name });
+    playlist_add();
     forwardFunc();
   }
 });
